@@ -30,7 +30,10 @@ router.get('/logout',isLoggedIn, (req,res)=>{
 router.get('/cambioContrasena',isLoggedIn, (req, res) => {
     res.render('auth/cambioContrasena');
 })
-router.post('/cambiarContrasena'),isLoggedIn,(req, res) =>{
-
+router.post('/cambioContrasena'),isLoggedIn,(req, res) =>{
+    const {password, password2} = req.body;
+    if(password === password2){
+        
+    }
 }
 module.exports = router;

@@ -15,7 +15,7 @@ ALTER TABLE Usuarios
     ADD PRIMARY KEY  (id);
 
 ALTER TABLE Usuarios
-    MODIFY id INT(11) NOT NULL AUTO_INCREMENT;
+    MODIFY correo VARCHAR(100) NOT NULL UNIQUE ;
 
 DESCRIBE users;
 -- Links Table
