@@ -1,0 +1,35 @@
+<div class=" container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card ">
+                <div class="card-title text-center p-4">
+                    <h2>Tarjeta de Credito</h2>
+                </div>
+                <div class="card-body">
+                    <form action="/pagos/credito" method="POST">
+                        <div class="form-group">
+                            <input type="number" class=" form-control" name="id" placeholder="Numero de Tarjeta" autofocus>
+                        </div>
+                         <div class="form-group">
+                            <input type="text" class=" form-control" name="apellidos" placeholder="Apellido del usuario" >
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class=" form-control" name="telefono" placeholder="Numero de Telefono" autofocus>
+                        </div>
+                         <div class="form-group">
+                             <input type = "date" name="fechaCaducidad" class="form-control" placeholder="Fecha de Caducidad">
+                         </div>
+                         <div class="form-group">
+                             <input type="number" class="form-control"  name="cvc" placeholder="Codigo de Verificacion">
+                         </div>
+                         <div class="form-group">
+                            <button class="btn btn-success btn-block">
+                                Ingresar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

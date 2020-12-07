@@ -1,11 +1,11 @@
 body{
     background: #f5f6f5;
     font-family: 'Poppins',sans-serif;
-    overflow: hidden;
+    overflow: visible;
 }
 .index{
-    width:100vw;
-    height:100vh;
+    width:auto;
+    height:auto;
 }
 .masthead {
     color: white;
@@ -29,4 +29,15 @@ body{
     .mashead h1 {
         font-size: 5.5rem;
     }
+}
+.footer {
+    position: absolute;
+    bottom: auto;
+    width: 100%;
+    height: 100px;
+    line-height: 60px;
+    background-color:  #424040;
+}
+.se{
+    height: 20px
 }

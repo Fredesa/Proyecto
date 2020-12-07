@@ -1,0 +1,49 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card text-center">
+                <div class="card-body">
+                    <p>A continuacion observaras una grafica la cual te mostrara en cual de las carreras eres mas afin:</p>
+                    <div class="ct-chart ct-perfect-fourth"></div>
+                    <a href="/profile" class="btn btn-primary m-4">
+                        Volver al inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+   var data = {
+  labels: ['carrera w', 'carrera x', 'carrera y', 'carrera z'],
+  series: [{{w}}, {{x}}, {{y}},{{z}}]
+};
+
+var options = {
+  labelInterpolationFnc: function(value) {
+    return value[0]
+  },
+    high: 50,
+    low: 0,
+    scaleMinSpace: 20,
+ onlyInteger: true,
+ referenceValue: 5
+};
+
+var responsiveOptions = [
+  ['screen and (min-width: 400px)', {
+    chartPadding: 30,
+    labelOffset: 100,
+    labelDirection: 'explode',
+    labelInterpolationFnc: function(value) {
+      return value;
+    }
+  }],
+  ['screen and (min-width: 800px)', {
+    labelOffset: 80,
+    chartPadding: 20
+  }]
+];
+
+new Chartist.Pie('.ct-chart', data, options, responsiveOptions);
+</script>

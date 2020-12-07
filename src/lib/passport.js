@@ -2,7 +2,6 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const pool = require('../database');
 const helpers = require('../lib/helpers');
-const {generatePassword} =require ('./auth');
 const nodemailer = require ('nodemailer');
 
 passport.use('local.signin', new LocalStrategy({
@@ -17,7 +16,7 @@ passport.use('local.signin', new LocalStrategy({
         if (validPassword) { 
             done(null, user, req.flash( 'success','Welcome '+ user.nombreCompleto));
         }else {
-            done(null, false, req.flash('messsage','Contraseña Incorrecta'))
+            done(null, false, req.flash('message','Contrasena Incorrecta'))
         }
     }else {
         return done(null, false, req.flash('message','El usuario no existe'));
@@ -70,7 +69,7 @@ passport.use('local.signup', new LocalStrategy({
             html: contentHTML
         });
         newUser.id = result.insertId;
-        return done(null, newUser);
+        return done(null, newUser, req.flash('success','Usuario creado correctamente, revisa tu correo con la contraseña.'));
     }
 }));
 
